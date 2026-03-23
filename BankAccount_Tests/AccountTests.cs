@@ -9,7 +9,7 @@ public class AccountTests
 	/// 
 	/// A placeholder class, that is used for testing here
 	/// Gets replaced later with the real code
-	/// Should always be an interface
+	/// Should always inherit from an interface
 	/// </summary>
 	[Fact]
 	public void Account_PayIn50_Result50()
