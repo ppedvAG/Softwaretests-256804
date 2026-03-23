@@ -2,6 +2,12 @@
 
 namespace M005_CodeCoverageTests;
 
+/// <summary>
+/// Extensions -> Fine Code Coverage
+/// View -> Terminal:
+/// - dotnet tool install -g dotnet-stryker
+/// - dotnet stryker
+/// </summary>
 public class RechnerTests
 {
 	public DerRechner r = new DerRechner();
