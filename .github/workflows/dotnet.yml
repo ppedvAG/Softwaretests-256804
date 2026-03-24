@@ -32,10 +32,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal ./M008_BankAccount_Tests/M008_BankAccount_Tests.csproj
 
     - name: Build .exe
-      run: dotnet publish ./M008_BankAccount/M008_BankAccount.csproj \
-            --configuration Release \
-            --runtime win-x64 \
-            --output ./publish/regular
+      run: dotnet publish ./M008_BankAccount/M008_BankAccount.csproj --configuration Release --runtime win-x64 --output ./publish/regular
 
     - name: Build single .exe
       run: dotnet publish ./M008_BankAccount/M008_BankAccount.csproj \
