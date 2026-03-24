@@ -35,14 +35,13 @@ jobs:
       run: dotnet publish ./M008_BankAccount/M008_BankAccount.csproj --configuration Release --runtime win-x64 --output ./publish/regular
 
     - name: Build single .exe
-      run: dotnet publish ./M008_BankAccount/M008_BankAccount.csproj \
-            --configuration Release \
-            --runtime win-x64 \
-            --self-contained true \
-            --output ./publish/single \
-            --property:IncludeAllContentForSelfExtract=true
-            --property:PublishSingleFile=true
+      run: dotnet publish ./M008_BankAccount/M008_BankAccount.csproj --configuration Release --runtime win-x64 --self-contained true --output ./publish/single --property:IncludeAllContentForSelfExtract=true --property:PublishSingleFile=true
 
     - name: Create release
-      run:
-            
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: v1.0  # Version of the release
+        name: Release Version 1  # Name of the release
+        files: publish/single/**  # Use the single .exe output from the "Build single .exe" build step
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
