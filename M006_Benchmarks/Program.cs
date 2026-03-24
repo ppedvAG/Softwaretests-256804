@@ -80,16 +80,15 @@ public class PerformanceTests
 public class StringBenchmarks
 {
 	/// <summary>
-	/// | Method            | Count  | Mean             | Error           | StdDev            | Median           | Rank | Allocated      |
-    /// |------------------ |------- |-----------------:|----------------:|------------------:|-----------------:|-----:|---------------:|
-    /// | StringPlus        | 100000 | 7,675,176.864 us | 689,177.9386 us | 1,392,173.5309 us | 8,345,860.950 us |    6 | 46777363.95 KB |
-    /// | StringPlus        | 10000  |    19,293.470 us |     332.2403 us |       655.8100 us |    19,182.639 us |    5 |   370543.41 KB |
-    /// | StringPlus        | 1000   |       159.720 us |       3.1497 us |         6.0684 us |       159.303 us |    3 |     2773.88 KB |
-    /// | StringBuilderTest | 100000 |     2,381.413 us |      31.0683 us |        62.7596 us |     2,400.521 us |    4 |     5044.71 KB |
-    /// | StringBuilderTest | 10000  |        85.885 us |       0.8669 us |         1.7313 us |        85.308 us |    2 |      458.59 KB |
-    /// | StringBuilderTest | 1000   |         6.749 us |       0.0489 us |         0.0976 us |         6.761 us |    1 |       36.18 KB |
+	/// | Method            | Count  | Mean         | Error           | StdDev            | Median           | Rank | Allocated      |
+    /// |------------------ |------- |-------------:|----------------:|------------------:|-----------------:|-----:|---------------:|
+    /// | StringPlus        | 100000 | 7,675.176 ms | 689,177.9386 us | 1,392,173.5309 us | 8,345,860.950 us |    6 | 46777363.95 KB |
+    /// | StringPlus        | 10000  |    19.293 ms |     332.2403 us |       655.8100 us |    19,182.639 us |    5 |   370543.41 KB |
+    /// | StringPlus        | 1000   |     0.159 ms |       3.1497 us |         6.0684 us |       159.303 us |    3 |     2773.88 KB |
+    /// | StringBuilderTest | 100000 |     2.381 ms |      31.0683 us |        62.7596 us |     2,400.521 us |    4 |     5044.71 KB |
+    /// | StringBuilderTest | 10000  |     0.085 ms |       0.8669 us |         1.7313 us |        85.308 us |    2 |      458.59 KB |
+    /// | StringBuilderTest | 1000   |     0.006 ms |       0.0489 us |         0.0976 us |         6.761 us |    1 |       36.18 KB |
 	/// </summary>
-
 
 	[Params(1000, 10000, 100000)]
 	public int Count {  get; set; }
