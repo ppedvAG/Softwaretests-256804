@@ -1,6 +1,6 @@
-﻿using M003_BankAccount;
+﻿using M008_BankAccount;
 
-namespace M003_BankAccount_Tests;
+namespace M008_BankAccount_Tests;
 
 public class AccountTests
 {

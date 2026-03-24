@@ -1,4 +1,4 @@
-﻿namespace M003_BankAccount;
+﻿namespace M008_BankAccount;
 
 /// <summary>
 /// Here we implement the real code

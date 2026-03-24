@@ -1,6 +1,6 @@
-﻿using M003_BankAccount;
+﻿using M008_BankAccount;
 
-namespace M003_BankAccount_Tests;
+namespace M008_BankAccount_Tests;
 
 /// <summary>
 /// Very simple implementation, that gets replaced later with the real implementation
