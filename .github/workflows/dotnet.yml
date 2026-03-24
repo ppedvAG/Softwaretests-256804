@@ -1,0 +1,51 @@
+name: Build and Test
+
+on:  # Trigger: Here we can define, when this pipeline will be run automatically
+  push:
+    branches: [ "main" ]
+    paths:
+      - ./M008_BankAccount
+      - ./M008_BankAccount_Tests
+  workflow_dispatch:  # With this trigger, you can start the pipeline by hand (button)
+
+jobs:
+  build:  # build: Named job (thats called build), that can be called within this script
+
+    runs-on: windows-latest  # Select the virtual machine, on which to run the workflow
+
+    steps:
+    - name: Get Code  # This action (actions/checkout@v4) fetches the code from this repo, and pushes it into the VM
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET  # Installs .NET on the VM
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0
+        
+    - name: Restore dependencies  # Load all NuGet-Packages
+      run: dotnet restore ./M008_BankAccount/M008_BankAccount.csproj
+      
+    - name: Build
+      run: dotnet build --no-restore ./M008_BankAccount/M008_BankAccount.csproj
+      
+    - name: Test
+      run: dotnet test --no-build --verbosity normal ./M008_BankAccount_Tests/M008_BankAccount_Tests.csproj
+
+    - name: Build .exe
+      run: dotnet publish ./M008_BankAccount/M008_BankAccount.csproj \
+            --configuration Release \
+            --runtime win-x64 \
+            --output ./publish/regular
+
+    - name: Build single .exe
+      run: dotnet publish ./M008_BankAccount/M008_BankAccount.csproj \
+            --configuration Release \
+            --runtime win-x64 \
+            --self-contained true \
+            --output ./publish/single \
+            --property:IncludeAllContentForSelfExtract=true
+            --property:PublishSingleFile=true
+
+    - name: Create release
+      run:
+            
