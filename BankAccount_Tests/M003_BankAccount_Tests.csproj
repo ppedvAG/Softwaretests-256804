@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BankAccount\BankAccount.csproj" />
+    <ProjectReference Include="..\BankAccount\M003_BankAccount.csproj" />
   </ItemGroup>
 
   <ItemGroup>
