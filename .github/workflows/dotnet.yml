@@ -6,6 +6,7 @@ on:  # Trigger: Here we can define, when this pipeline will be run automatically
     paths:
       - ./M008_BankAccount
       - ./M008_BankAccount_Tests
+  workflow_dispatch:  # With this trigger, you can start the pipeline by hand (button)
 
 jobs:
   build:
